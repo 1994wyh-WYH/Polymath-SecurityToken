@@ -1,0 +1,1159 @@
+{
+  "contractName": "ITickerRegistry",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_symbol",
+          "type": "string"
+        },
+        {
+          "name": "_owner",
+          "type": "address"
+        },
+        {
+          "name": "_tokenName",
+          "type": "string"
+        }
+      ],
+      "name": "checkValidity",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_symbol",
+          "type": "string"
+        }
+      ],
+      "name": "getDetails",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        },
+        {
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "name": "",
+          "type": "string"
+        },
+        {
+          "name": "",
+          "type": "bytes32"
+        },
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_symbol",
+          "type": "string"
+        },
+        {
+          "name": "_owner",
+          "type": "address"
+        },
+        {
+          "name": "_tokenName",
+          "type": "string"
+        },
+        {
+          "name": "_swarmHash",
+          "type": "bytes32"
+        }
+      ],
+      "name": "isReserved",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity ^0.4.24;\n\n/**\n * @title Interface for the polymath ticker registry contract\n */\ncontract ITickerRegistry {\n    /**\n    * @notice Check the validity of the symbol\n    * @param _symbol token symbol\n    * @param _owner address of the owner\n    * @param _tokenName Name of the token\n    * @return bool\n    */\n    function checkValidity(string _symbol, address _owner, string _tokenName) public returns(bool);\n\n    /**\n    * @notice Returns the owner and timestamp for a given symbol\n    * @param _symbol symbol\n    */\n    function getDetails(string _symbol) public view returns (address, uint256, string, bytes32, bool);\n\n    /**\n     * @notice Check the symbol is reserved or not\n     * @param _symbol Symbol of the token\n     * @return bool\n     */\n     function isReserved(string _symbol, address _owner, string _tokenName, bytes32 _swarmHash) public returns(bool);\n\n}\n",
+  "sourcePath": "/Users/Yihan/st/contracts/interfaces/ITickerRegistry.sol",
+  "ast": {
+    "absolutePath": "/Users/Yihan/st/contracts/interfaces/ITickerRegistry.sol",
+    "exportedSymbols": {
+      "ITickerRegistry": [
+        2337
+      ]
+    },
+    "id": 2338,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2297,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:17"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": "@title Interface for the polymath ticker registry contract",
+        "fullyImplemented": false,
+        "id": 2337,
+        "linearizedBaseContracts": [
+          2337
+        ],
+        "name": "ITickerRegistry",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": "@notice Check the validity of the symbol\n@param _symbol token symbol\n@param _owner address of the owner\n@param _tokenName Name of the token\n@return bool",
+            "id": 2308,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "checkValidity",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2304,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2299,
+                  "name": "_symbol",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2308,
+                  "src": "348:14:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 2298,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "348:6:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2301,
+                  "name": "_owner",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2308,
+                  "src": "364:14:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2300,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "364:7:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2303,
+                  "name": "_tokenName",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2308,
+                  "src": "380:17:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 2302,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "380:6:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "347:51:17"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 2307,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2306,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2308,
+                  "src": "414:4:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 2305,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "414:4:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "413:6:17"
+            },
+            "scope": 2337,
+            "src": "325:95:17",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": "@notice Returns the owner and timestamp for a given symbol\n@param _symbol symbol",
+            "id": 2323,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getDetails",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2311,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2310,
+                  "name": "_symbol",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2323,
+                  "src": "554:14:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 2309,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "554:6:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "553:16:17"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 2322,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2313,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2323,
+                  "src": "591:7:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2312,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "591:7:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2315,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2323,
+                  "src": "600:7:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2314,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "600:7:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2317,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2323,
+                  "src": "609:6:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 2316,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "609:6:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2319,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2323,
+                  "src": "617:7:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 2318,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "617:7:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2321,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2323,
+                  "src": "626:4:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 2320,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "626:4:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "590:41:17"
+            },
+            "scope": 2337,
+            "src": "534:98:17",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": "@notice Check the symbol is reserved or not\n@param _symbol Symbol of the token\n@return bool",
+            "id": 2336,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "isReserved",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2332,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2325,
+                  "name": "_symbol",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2336,
+                  "src": "788:14:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 2324,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "788:6:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2327,
+                  "name": "_owner",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2336,
+                  "src": "804:14:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2326,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "804:7:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2329,
+                  "name": "_tokenName",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2336,
+                  "src": "820:17:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 2328,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "820:6:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2331,
+                  "name": "_swarmHash",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2336,
+                  "src": "839:18:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 2330,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "839:7:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "787:71:17"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 2335,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2334,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2336,
+                  "src": "874:4:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 2333,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "874:4:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "873:6:17"
+            },
+            "scope": 2337,
+            "src": "768:112:17",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 2338,
+        "src": "96:787:17"
+      }
+    ],
+    "src": "0:884:17"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/Yihan/st/contracts/interfaces/ITickerRegistry.sol",
+    "exportedSymbols": {
+      "ITickerRegistry": [
+        2337
+      ]
+    },
+    "id": 2338,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2297,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:17"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": "@title Interface for the polymath ticker registry contract",
+        "fullyImplemented": false,
+        "id": 2337,
+        "linearizedBaseContracts": [
+          2337
+        ],
+        "name": "ITickerRegistry",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": "@notice Check the validity of the symbol\n@param _symbol token symbol\n@param _owner address of the owner\n@param _tokenName Name of the token\n@return bool",
+            "id": 2308,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "checkValidity",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2304,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2299,
+                  "name": "_symbol",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2308,
+                  "src": "348:14:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 2298,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "348:6:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2301,
+                  "name": "_owner",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2308,
+                  "src": "364:14:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2300,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "364:7:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2303,
+                  "name": "_tokenName",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2308,
+                  "src": "380:17:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 2302,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "380:6:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "347:51:17"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 2307,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2306,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2308,
+                  "src": "414:4:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 2305,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "414:4:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "413:6:17"
+            },
+            "scope": 2337,
+            "src": "325:95:17",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": "@notice Returns the owner and timestamp for a given symbol\n@param _symbol symbol",
+            "id": 2323,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getDetails",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2311,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2310,
+                  "name": "_symbol",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2323,
+                  "src": "554:14:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 2309,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "554:6:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "553:16:17"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 2322,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2313,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2323,
+                  "src": "591:7:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2312,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "591:7:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2315,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2323,
+                  "src": "600:7:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2314,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "600:7:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2317,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2323,
+                  "src": "609:6:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 2316,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "609:6:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2319,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2323,
+                  "src": "617:7:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 2318,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "617:7:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2321,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2323,
+                  "src": "626:4:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 2320,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "626:4:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "590:41:17"
+            },
+            "scope": 2337,
+            "src": "534:98:17",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": "@notice Check the symbol is reserved or not\n@param _symbol Symbol of the token\n@return bool",
+            "id": 2336,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "isReserved",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2332,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2325,
+                  "name": "_symbol",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2336,
+                  "src": "788:14:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 2324,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "788:6:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2327,
+                  "name": "_owner",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2336,
+                  "src": "804:14:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2326,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "804:7:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2329,
+                  "name": "_tokenName",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2336,
+                  "src": "820:17:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 2328,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "820:6:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2331,
+                  "name": "_swarmHash",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2336,
+                  "src": "839:18:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 2330,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "839:7:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "787:71:17"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 2335,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2334,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2336,
+                  "src": "874:4:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 2333,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "874:4:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "873:6:17"
+            },
+            "scope": 2337,
+            "src": "768:112:17",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 2338,
+        "src": "96:787:17"
+      }
+    ],
+    "src": "0:884:17"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "2.0.0",
+  "updatedAt": "2018-07-09T19:15:50.903Z"
+}
